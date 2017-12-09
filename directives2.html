@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>My first AngularJS code</title>
+    <script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular-sanitize.js"></script>
+    </script>
+    <script>
+
+    var app = angular.module('yourApp', ['ngSanitize']);
+    app.controller('CustomerController', function($scope) {
+        $scope.myHTML = 'This is HTML bind example
+
+        AngularJS Built in Directives';
+    });
+    </script>
+</head>
+<body>
+<p>The ng-bind-html directive is used to bind inner HTML property of an HTML element.</p>
+<div ng-app="yourApp">
+    <div ng-controller="CustomerController">
+        <p ng-bind-html="myHTML"></p>
+
+    </div>
+</div>
+</body>
+</html>

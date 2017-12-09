@@ -1,0 +1,93 @@
+<html ng-app>
+<head>
+    <title>My first AngularJS code</title>
+    <Script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js">
+    </Script>
+    <Script>
+        function appController($scope) {
+            $scope.firstName = "Jimi";
+            $scope.lastName = "Scotts";
+            $scope.truefalse = "false";
+        }
+    </Script>
+    <Script>
+        function appController($scope) {
+            $scope.students = [
+                {firstName:'Jimi', lastName:'Scotts', email:'jimi@xyz.com'},
+                {firstName:'Paul', lastName:'Adam', email:'paul.a@xyz.com'},
+                {firstName:'Peter', lastName:'England', email:'peter@xyz.com'},
+                {firstName:'Rechard', lastName:'Jeff', email:'reachardjeff@xyz.com'}
+            ];
+            $scope.makeSelected = $scope.students[2].email;
+        }
+    </Script>
+    <Script>
+        function appController($scope) {
+            $scope.checked = true;
+        }
+    </Script>
+</head>
+<body>
+<p>The AngularJS ng-if directive is used to completely removes and recreates the element in the DOM if condition meet.</p>
+Click Me <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
+<div ng-if="checked">
+    This will remove when button clicks!
+</div>
+<p>The AngularJS ng-switch directive is used to chooses one of the element and makes it visible based on the expression.</p>
+<div ng-app ng-init="page=one">
+    <ul>
+        <li><a href="#" ng-click="page='one'">Page One</a></li>
+        <li><a href="#" ng-click="page='two'">Page Two</a></li>
+
+    </ul>
+    <div ng-switch on="page">
+        <div ng-switch-when="one">
+            <h1>Page One</h1>
+        </div>
+        <div ng-switch-when="two">
+            <h1>Page Two</h1>
+        </div>
+        <div ng-switch-default>
+            <h1>Page Default</h1>
+        </div>
+    </div>
+</div>
+<p>The AngularJS ng-readonly directive is used to make DOM elements readonly.It traverses all DOM elemets with the readonly property and makes the element readonly.</p>
+<div ng-app ng-controller="appController">
+    <p>First Name:
+        <input ng-model="firstName" ng-readonly="true"/>
+    </p>
+    <p>Last Name:
+        <input ng-model="lastName" ng-readonly="{{truefalse}}"/>
+    </p>
+</div>
+<p>The AngularJS ng-selected directive is used make selected option in select.</p>
+<div ng-app ng-controller="appController">
+    Show Selected :<select ng-model="makeSelected" ng-options="student.email as (student.firstName + ' ' + student.lastName)
+for student in students"></select>
+</div>
+<p>The AngularJS ng-show & ng-hide directive is used show or hide the DOM element based its expression.</br>
+
+    The element is display or hide by removing or adding the ng-hide CSS predefined class onto the element.</p>
+<div ng-app ng-controller="appController">
+
+    Click To Show/Hide: <input type="checkbox" ng-model="checked"><br/>
+    <div>
+        Show:
+        <div ng-show="checked">
+            <span></span> This will show up when checkbox is checked.
+        </div>
+    </div>
+    <div>
+        Hide:
+        <div ng-hide="checked">
+            <span></span> This will hide when checkbox is checked.
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

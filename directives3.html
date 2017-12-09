@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>My first AngularJS ng-bind Directive code</title>
+    <script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js">
+    </script>
+    <script>
+        function CustomerController($scope) {
+            $scope.customer = { name: "Jimi Scott", address: "12-13-283/A1", email: "Jimi@yahoo.com" };
+        }
+    </script>
+</head>
+<body>
+<p>ng-bind:It is an alternative to {{ }} template.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+        <span ng-bind="customer.name"></span>
+        <span ng-bind="customer.address"></span>
+        <span ng-bind="customer.email"></span>
+
+    </div>
+</div>
+<p>	ng-bind-template:It binds multiple expressions to the view.The ng-bind-template directive is used to binds multiple expressions to the view.
+    Unlike ng-Bind, the ngBindTemplate can contain multiple {{ }} expressions.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+        <span ng-bind-template="{{ customer.name}} {{ customer.address }} {{ customer.email }}"></span>
+</div>
+    </div>
+<p>The AngularJS ng-non-bindable directive is used to not to bind data contents of the current DOM element.</p>
+<div ng-app="">
+    <span> {{ 10 + 2 }}</span>
+    <span ng-non-bindable> {{ 10 + 2 }}</span>
+</div>
+</body>
+</html>
+

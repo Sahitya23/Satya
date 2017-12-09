@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>My first AngularJS Directive code</title>
+    <Script SRC="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js">
+    </Script>
+    <Script>
+        function CustomerController($scope) {
+            $scope.presentValue = '';
+            $scope.changed = function() {
+                $scope.changedValue = $scope.presentValue + ' Value Changed';
+            };
+
+        }
+    </Script>
+    <script>
+        function CustomerController($scope) {
+            $scope.checked = false;
+        }
+    </script>
+    <Script>
+        function CustomerController($scope) {
+            $scope.siteName = "www.TechStrikers.com";
+            $scope.clicked = function()
+            {
+                $scope.siteCSS = "{font-family:Cambria;font-size:20px;}";
+            };
+        }
+    </Script>
+    <Script>
+        function CustomerController($scope) {
+            $scope.siteName = "www.TechStrikers.com";
+        }
+    </Script>
+    <Script>
+        function CustomerController($scope) {
+            $scope.isDisabled = true;
+            $scope.siteName = "www.TechStrikers.com";
+        }
+        </script>
+    <Script type="text/ng-template" id="directives.html">
+</Script>
+    <Script type="text/ng-template" id="directives2.html">
+</Script>
+</head>
+<body>
+<p>The ng-change directive is used to execute the expression when input changed.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+
+        <input type="text" ng-model="presentValue" ng-change="changed()" id="ng-change1" /></br>
+        Display : {{ changedValue }}
+
+    </div>
+</div>
+<p>The AngularjS ng-checked directive is used to set checkbox checked.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+
+        Check Me: <input type="checkbox" ng-model="checked"><br/>
+        This Will Check Automatically: <input id="checkSlave" type="checkbox" ng-checked="checked">
+    </div>
+</div>
+<p>The AngularJS ng-class directive is used to set css class dynamically.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+
+        <input id="btnButton" type="button" value="Change Font" ng-change="clicked">
+        {{ siteName }}
+    </div>
+</div>
+<p>The AngularJS ng-cloak directive is used to prevent displaying the content until AngularJS has taken control.</p>
+<p>The AngularJS ng-controller directive is used to attach a controller class to the view.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+
+        <input id="btnButton" type="button" value="Change Font" ng-change="clicked">
+        <p ng-cloak ng-bind="siteName"></p>
+    </div>
+</div>
+<p>The AngularJS ng-disabled directive is used to attach disabled attributes to the form element.</p>
+<div ng-app="">
+    <div ng-controller="CustomerController">
+
+        <input type="text" ng-disabled="isDisabled" ng-model="siteName">
+
+    </div>
+</div>
+The AngularJS ng-include directive is used to include an external HTML fragment to your page.
+<div ng-app="">
+
+    <ng-include src="'http://www.techstrikers.com/AngularJS/htmlPage1.html'"></ng-include>
+    <ng-include src="'http://www.techstrikers.com/AngularJS/htmlPage2.html'"></ng-include>
+
+</div>
+
+
+</body>
+</html>
