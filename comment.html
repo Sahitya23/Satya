@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+</head>
+<body ng-app="myApp">
+
+<script>
+    app= angular.module('myApp', []);
+    app.directive('myDirectiveName', function(){
+        return {
+            restrict: 'C',
+            link: function(scope, elem, attr) {
+                alert(attr.myDirectiveName);
+            }
+        };
+    });
+
+</script>
+<!-- directive: my-directive-name this is all an argument -->
+
+</body>
+</html>

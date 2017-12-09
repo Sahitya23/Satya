@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+</head>
+<body ng-app="MyApp">
+
+<script>
+    var module = angular.module('MyApp', []);
+
+    module.service('VaderService', function() {
+        this.speak = function (name) {
+            return 'Join the dark side ' + name;
+        }
+    });
+
+    module.controller('StarWarsController', function($scope, VaderService) {
+        $scope.luke = VaderService.speak('luke');
+    });
+
+</script>
+<table ng-controller="StarWarsController">
+    <tbody>
+    <tr><td>{{luke}}</td></tr>
+    </tbody>
+</table>
+</body>
+</html>

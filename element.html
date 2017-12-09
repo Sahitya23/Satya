@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="MyController" >
+    <div>This div will be replaced</div>
+</div>
+
+<script>
+    myapp = angular.module("myapp", []);
+
+    myapp.directive('div', function() {
+        var directive = {};
+
+        directive.restrict = 'E';
+
+        directive.template = "My first directive: {{textToInsert}}";
+
+        return directive;
+    });
+
+</script>
+</body>
+</html>

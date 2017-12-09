@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+</head>
+<body ng-app="MyApp">
+<script>
+    var module = angular.module('MyApp', []);
+
+    module.factory('VaderService', function() {
+        var VaderClass = function(padawan) {
+            this.name = padawan;
+            this.speak = function () {
+                return 'Join the dark side ' + this.name;
+            }
+        }
+
+        return VaderClass;
+    });
+    module.controller('StarWarsController', function($scope, VaderService) {
+        var luke = new VaderService('luke');
+        $scope.luke = luke.speak();
+    });
+</script>
+<table ng-controller="StarWarsController">
+    <tbody>
+    <tr><td>{{luke}}</td></tr>
+    </tbody>
+</table>
+
+</body>
+</html>

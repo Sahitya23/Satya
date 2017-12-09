@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+</head>
+
+<body ng-app="myApp">
+
+<div ng-controller="AppController">
+    <h3>List of Sale Items</h3>
+    <div ng-repeat="item in items">
+        <item-widget>{{item}}</item-widget>
+    </div>
+</div>
+<script>
+   app= angular.module('myApp', []);
+        app.controller('AppController', function($scope) {
+            $scope.items = [
+                {name: 'Computer', price: 500, condition:'New',brand : 'Lenovo', published:'01/11/2015'},
+                {name: 'Phone', price: 200, condition:'New',brand : 'Samsung', published:'02/11/2015'},
+                {name: 'Printer', price: 300, condition:'New',brand : 'Brother', published:'06/11/2015'},
+                {name: 'Dishwasher', price: 250, condition:'Second-Hand',brand : 'WhirlPool', published:'01/12/2015'}
+            ];
+        });
+        app.directive('itemWidget', function() {
+            return{
+                templateUrl:'attribute.html',
+                restrict: 'A'
+            }
+        });
+</script>
+</body>
+</html>
