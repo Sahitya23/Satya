@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+The ng-app directive initializes an AngularJS application.
+The ng-app directive also tells AngularJS that the div element is the "owner" of the AngularJS application.
+
+The ng-init directive initializes application data.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+<div ng-app="" ng-init="firstName='John'">
+
+    <p>Name: <input type="text" ng-model="firstName"></p>
+    <p>You wrote: {{ firstName }}</p>
+
+</div>
+The {{ firstName }} expression, in the example above, is an AngularJS data binding expression.
+
+Data binding in AngularJS binds AngularJS expressions with AngularJS data.
+
+{{ firstName }} is bound with ng-model="firstName".
+Using ng-init is not very common. You will learn how to initialize data in the chapter about controllers.
+<div ng-app="" ng-init="quantity=1;price=5">
+
+    Quantity: <input type="number" ng-model="quantity">
+    Costs:    <input type="number" ng-model="price">
+
+    Total in dollar: {{ quantity * price }}
+
+</div>
+The ng-repeat directive repeats an HTML element.
+The ng-repeat directive actually clones HTML elements once for each item in a collection.
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
