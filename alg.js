@@ -13,7 +13,7 @@ function isPrime(n){
     return true;
 }
 
-console.log(isPrime(4))
+console.log(isPrime(4));
 //Find all prime factors of a number?
 function primeFactors(n){
     var factors = [],
@@ -382,3 +382,17 @@ function permutations(str){
     return perms;
 }
 console.log(permutations('this is string'))
+//find longest word in a string.
+function findLongestWord(str) {
+    var strSplit = str.split(' ');
+    var longestWord = 0;
+    for(var i = 0; i < strSplit.length; i++){
+        if(strSplit[i].length > longestWord){
+            longestWord = strSplit[i].length;
+            c=strSplit[i]
+        }
+
+    }
+    console.log(c)
+}
+findLongestWord("I hope your doing good")
